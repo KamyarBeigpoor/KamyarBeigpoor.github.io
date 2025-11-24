@@ -39,23 +39,46 @@ header h1 {
     position: absolute;
     border-radius: 50%;
     border: 1px solid rgba(191, 169, 124, 0.25);
-    animation: rotate 20s infinite linear;
+    animation:
+        rotate 20s infinite linear,
+        floatY 6s infinite ease-in-out;
     filter: blur(0.4px);
+}
+@keyframes floatY {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
 }
 .r1 {
     width: 280px;
     height: 280px;
-    animation-duration: 14s;
+    animation: rotateFloat 14s infinite linear;
 }
+
 .r2 {
     width: 350px;
     height: 350px;
-    animation-duration: 22s;
+    animation: rotateFloat 22s infinite linear;
 }
 .r3 {
     width: 470px;
     height: 470px;
-    animation-duration: 35s;
+    animation: rotateFloat 35s infinite linear;
+}
+@keyframes rotateFloat {
+    0% {
+        transform: rotate(0deg) translateY(0);
+    }
+    50% {
+        transform: rotate(180deg) translateY(-15px);
+    }
+    100% {
+        transform: rotate(360deg) translateY(0);
+    }
 }
 @keyframes rotate {
     from {
