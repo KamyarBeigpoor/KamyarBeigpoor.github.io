@@ -1,151 +1,193 @@
-/* ===== GLOBAL ===== */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;600&family=Inter:wght@200;400&display=swap');
-
+/* ===== GENERAL RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html, body {
-    background: #0b0b0c;
-    color: #d9d6d0;
-    font-family: "Inter", sans-serif;
-    height: 100%;
+/* ===== BACKGROUND ===== */
+body {
+    font-family: "Trebuchet MS", sans-serif;
+    background: radial-gradient(circle at center, #0d0d0f 0%, #050506 100%);
+    color: #dcdcdc;
+    min-height: 100vh;
     overflow-x: hidden;
+
+    /* subtle grain */
+    position: relative;
 }
 
-/* Grain texture */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
-    opacity: 0.08;
-    mix-blend-mode: overlay;
     pointer-events: none;
-    z-index: 1000;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQCAQAAAD9CzEMAAAACXBIWXMAAAxOAAAMTgGOlGocAAAAMUlEQVR4nO3BMQEAAADCoPdPbQ8HFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPgGzJoAAaNpTiMAAAAASUVORK5CYII=") repeat;
+    opacity: 0.075;
+    z-index: 1;
 }
 
-/* ===== TOPBAR ===== */
+/* ===== TOP BAR ===== */
 .topbar {
-    width: 100%;
-    padding: 30px;
     text-align: center;
-    background: radial-gradient(circle at center, #16161b, #0b0b0c 70%);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 30px 0;
+    background: linear-gradient(120deg, #111113, #0a0a0c, #131316);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
     position: relative;
-    overflow: hidden;
 }
 
 .topbar h1 {
-    font-family: "EB Garamond", serif;
-    font-size: 2.5rem;
+    font-size: 1.9rem;
     letter-spacing: 2px;
-    text-shadow: 0 0 10px #4d3c8a66, 0 0 30px #251c4455;
-    animation: fadeReveal 2.5s ease forwards;
+    text-transform: lowercase;
+    opacity: 0.92;
+    text-shadow: 0 0 20px rgba(255,255,255,0.08);
 }
 
-/* Floating geometric eye in topbar */
+/* Floating faint sigil */
 .topbar::after {
-    content: "◬";
+    content: "⟁";
     position: absolute;
     right: 40px;
-    top: 20px;
-    font-size: 46px;
-    color: rgba(255,255,255,0.05);
-    animation: slowSpin 35s linear infinite;
+    top: 15px;
+    font-size: 45px;
+    opacity: 0.06;
 }
 
-/* ===== CENTER AREA ===== */
+/* ===== MAIN CENTER AREA ===== */
 .center {
-    margin-top: 70px;
+    padding: 60px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-/* titlecenter */
-.titlecenter h2 {
-    font-family: "EB Garamond", serif;
-    font-size: 1.8rem;
-    letter-spacing: 3px;
-    margin-bottom: 40px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid rgba(255,255,255,0.07);
-    text-shadow: 0 0 6px #42356b88;
-    animation: driftIn 2s ease forwards;
-}
-
-/* ===== PROJECT BOXES ===== */
-.projects {
-    display: flex;
-    flex-direction: column;
     gap: 40px;
-    width: 80%;
-    max-width: 600px;
 }
 
-.seperation {
+/* title */
+.titlecenter h2 {
+    font-size: 1.6rem;
+    letter-spacing: 1.5px;
+    text-transform: lowercase;
+    color: #c1c1c1;
+    opacity: 0.9;
+}
+
+/* ===== PROJECT SECTION ===== */
+.projects {
+    width: 80%;
+    max-width: 700px;
     background: rgba(255,255,255,0.03);
-    padding: 25px;
-    border-radius: 14px;
+    padding: 30px;
+    border-radius: 16px;
+    backdrop-filter: blur(4px);
     border: 1px solid rgba(255,255,255,0.06);
-    backdrop-filter: blur(6px);
     position: relative;
     overflow: hidden;
-    transition: 0.4s ease;
 }
 
-.seperation:hover {
-    background: rgba(255,255,255,0.06);
-    transform: translateY(-3px);
-    box-shadow: 0 0 20px #44387a33;
-}
-
-/* geometric glyph behind items */
-.seperation::before {
-    content: "۞";
+/* faint geometry */
+.projects::before {
+    content: "";
     position: absolute;
-    font-size: 80px;
-    left: -20px;
-    top: -20px;
-    opacity: 0.04;
-    animation: slowSpin 20s linear infinite;
+    width: 240px;
+    height: 240px;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 50%;
+    top: -80px;
+    right: -60px;
+    transform: rotate(25deg);
+}
+
+.projects::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255,255,255,0.035);
+    border-radius: 50%;
+    bottom: -100px;
+    left: -70px;
+    transform: rotate(-15deg);
+}
+
+/* individual project */
+.seperation {
+    padding: 20px;
+    background: rgba(255,255,255,0.02);
+    border-radius: 10px;
+    border: 1px solid rgba(255,255,255,0.03);
+    position: relative;
 }
 
 .seperation p {
-    font-size: 1.2rem;
     margin-bottom: 10px;
-    font-family: "EB Garamond", serif;
+    font-size: 1.15rem;
+    letter-spacing: 1.2px;
+}
+
+/* ===== THE <a> TAG (DETAILED + MYSTERIOUS) ===== */
+.seperation a {
+    display: inline-block;
+    padding: 10px 22px;
+    border-radius: 6px;
+    background: rgba(255,255,255,0.05);
+    text-decoration: none;
+
+    color: #e9e9e9;
+    font-size: 1rem;
     letter-spacing: 1px;
-    text-shadow: 0 0 6px #231a3666;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: all 0.35s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* glowing mystical underline */
+.seperation a::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    width: 0%;
+    height: 1px;
+    background: #ffffff;
+    opacity: 0.35;
+    transform: translateX(-50%);
+    transition: width 0.4s ease;
+}
+
+.seperation a:hover::after {
+    width: 80%;
+}
+
+/* hovering effect */
+.seperation a:hover {
+    background: rgba(255,255,255,0.12);
+    box-shadow:
+        0 0 10px rgba(255,255,255,0.08),
+        inset 0 0 15px rgba(255,255,255,0.06);
+    letter-spacing: 1.8px;
+    border-color: rgba(255,255,255,0.15);
+}
+
+/* subtle pulse */
+@keyframes pulseGlow {
+    0%   { box-shadow: 0 0 0 rgba(255,255,255,0.0); }
+    50%  { box-shadow: 0 0 15px rgba(255,255,255,0.03); }
+    100% { box-shadow: 0 0 0 rgba(255,255,255,0.0); }
 }
 
 .seperation a {
-    color: #ccbaff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 2px;
-    transition: 0.3s ease;
+    animation: pulseGlow 4s infinite ease-in-out;
 }
 
-.seperation a:hover {
-    border-bottom: 1px solid #ccbaff55;
-}
-
-/* ===== ANIMATIONS ===== */
-@keyframes slowSpin {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-}
-
-@keyframes fadeReveal {
-    0% { opacity: 0; transform: translateY(20px); }
-    100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes driftIn {
-    0% { opacity: 0; transform: translateY(20px) scale(0.97); }
-    100% { opacity: 1; transform: translateY(0) scale(1); }
+/* ===== EYES AROUND SECTION ===== */
+.projects::after {
+    content: "◉";
+    color: rgba(255,255,255,0.06);
+    position: absolute;
+    font-size: 70px;
+    top: 10px;
+    left: 20px;
 }
