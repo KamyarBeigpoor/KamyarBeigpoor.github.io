@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamyar's Grainy Corner</title>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Rock+Salt&display=swap" rel="stylesheet">
+    <style>
+        /* ===== GLOBAL STYLES ===== */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Courier Prime', monospace;
+            background: #f2e9e4 url('https://www.transparenttextures.com/patterns/grain.png') repeat;
+            color: #2c2c2c;
+            line-height: 1.5;
+        }
+        a {
+            color: #5a4d41;
+            text-decoration: none;
+            border-bottom: 1px dotted #5a4d41;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            padding: 40px;
+            background: #d9cbb1;
+            border-bottom: 5px solid #2c2c2c;
+            text-align: center;
+        }
+        header h1 {
+            font-family: 'Rock Salt', cursive;
+            font-size: 3rem;
+            color: #3e3a36;
+            text-shadow: 1px 1px 0 #b1a78f;
+        }
+        header p {
+            margin-top: 10px;
+            font-size: 1.1rem;
+            color: #5a4d41;
+        }
+
+        /* ===== MAIN CONTENT ===== */
+        main {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        section.card {
+            background: #e6dfd4;
+            padding: 20px;
+            border: 2px solid #2c2c2c;
+            box-shadow: 5px 5px 0 #b1a78f;
+            transform: rotate(-1deg);
+            transition: transform 0.2s;
+        }
+        section.card:nth-child(even) {
+            transform: rotate(1deg);
+        }
+        section.card:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+        section.card h2 {
+            font-family: 'Rock Salt', cursive;
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #3e3a36;
+        }
+        section.card p {
+            font-size: 0.95rem;
+            color: #3e3a36;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #d9cbb1;
+            padding: 30px;
+            text-align: center;
+            font-size: 0.9rem;
+            border-top: 5px solid #2c2c2c;
+            margin-top: 50px;
+        }
+
+        /* ===== COLLAGE ELEMENTS ===== */
+        .sticker {
+            display: inline-block;
+            padding: 10px;
+            background: #c9bca1;
+            border: 2px solid #2c2c2c;
+            transform: rotate(-5deg);
+            margin: 5px;
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.85rem;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            main {
+                padding: 20px;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kamyar's Grainy Corner</h1>
+        <p>A little chaotic, a little cozy, a little collage.</p>
+    </header>
+
+    <main>
+        <section class="card">
+            <h2>About Me</h2>
+            <p>Just a human living in a messy world. Collecting thoughts, pixels, and sticky notes.</p>
+            <span class="sticker">#random</span>
+            <span class="sticker">#collage</span>
+        </section>
+
+        <section class="card">
+            <h2>Projects</h2>
+            <p>Old-school websites, little experiments in HTML, CSS, and pure chaos. Nothing too fancy, all matte and grainy.</p>
+            <span class="sticker">#fun</span>
+        </section>
+
+        <section class="card">
+            <h2>Favorite Things</h2>
+            <p>Typewriters, paper scraps, muted colors, and web pages that feel like zines.</p>
+            <span class="sticker">#retro</span>
+            <span class="sticker">#grainy</span>
+        </section>
+
+        <section class="card">
+            <h2>Contact</h2>
+            <p>Hit me up through <a href="mailto:kamyar@example.com">email</a> or just send a paper plane.</p>
+            <span class="sticker">#hello</span>
+        </section>
+    </main>
+
+    <footer>
+        &copy; 2025 Kamyar. Handmade chaos, all rights reserved.
+    </footer>
+</body>
+</html>
