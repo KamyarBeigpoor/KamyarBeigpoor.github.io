@@ -15,17 +15,6 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Grain texture */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background-image: url('grain.png'); /* Add a local grain image */
-    opacity: 0.08;
-    mix-blend-mode: overlay;
-    pointer-events: none;
-    z-index: 1000;
-}
 
 /* ===== TOPBAR ===== */
 .topbar {
