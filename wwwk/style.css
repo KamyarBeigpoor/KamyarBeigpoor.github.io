@@ -4,16 +4,16 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Courier Prime', monospace;
     background: #f4efe6 url('https://www.transparenttextures.com/patterns/grain.png') repeat;
     color: #2c2c2c;
     overflow-x: hidden;
     line-height: 1.6;
+    position: relative;
 }
 
-/* ===== COLORS ===== */
+/* ===== COLOR PALETTE ===== */
 :root {
     --paper-light: #f4efe6;
     --paper-dark: #d4c3a4;
@@ -63,7 +63,7 @@ header .tiny-note {
     transform: rotate(4deg);
 }
 
-/* ===== SCRAPS / SECTIONS ===== */
+/* ===== SCRAPS ===== */
 .scrap {
     background: var(--paper-light);
     border: 2px solid #2c2c2c;
@@ -92,15 +92,24 @@ header .tiny-note {
     color: #3c3a36;
 }
 
-/* ===== PINNED NOTES ===== */
+/* ===== FLOATING NOTES ===== */
 .note {
     background: var(--tape-yellow);
     border: 2px solid #2c2c2c;
-    width: 180px;
+    width: 200px;
     padding: 12px;
     transform: rotate(-3deg);
     position: absolute;
     font-size: 0.85rem;
+}
+
+/* ===== PINNED IMAGES ===== */
+.pinned-img {
+    border: 4px solid var(--paper-dark);
+    box-shadow: 6px 6px 0 var(--dust-gray);
+    position: absolute;
+    transform: rotate(-2deg);
+    max-width: 250px;
 }
 
 /* ===== DOODLES ===== */
@@ -138,4 +147,5 @@ footer {
 @media (max-width: 650px) {
     header h1 { font-size: 2.2rem; }
     .scrap { margin: 40px auto; transform: rotate(0deg); max-width: 90%; }
+    .pinned-img { max-width: 80%; left: 10%; }
 }
