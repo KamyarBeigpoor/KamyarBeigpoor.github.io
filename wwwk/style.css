@@ -1,7 +1,9 @@
 .eye {
     align-items: center;
-    width: 750px;
 }
 body {
     background-color: rgb(51, 51, 51);
+}
+#eyeimg {
+    width: 500px;
 }
