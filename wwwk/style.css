@@ -1,9 +1,10 @@
-.eye {
-    align-items: center;
-}
+
 body {
     background-color: rgb(51, 51, 51);
 }
 #eyeimg {
-    width: 500px;
+     display: block;
+     margin-left: auto;
+    margin-right: auto;
+     width: 40%;
 }
