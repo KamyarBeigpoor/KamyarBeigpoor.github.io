@@ -150,8 +150,21 @@ html, body {
     0% { opacity: 0; transform: translateY(20px) scale(0.97); }
     100% { opacity: 1; transform: translateY(0) scale(1); }
 }
-wwwk {
+.wwwk {
     margin-top: 40px;
     padding: 5px;
     background: rgb(240, 206, 206);
+}
+.wwwkbtn {
+        font-family: "EB Garamond", serif;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    padding: 10px 25px;
+    background: linear-gradient(145deg, #4d3c8a, #2b1f4b);
+    border: 2px solid #ccbaff;
+    color: #ccbaff;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.4s;
+    box-shadow: 0 0 12px rgba(204,186,255,0.3), 0 0 25px rgba(77,60,138,0.2) inset;
 }
